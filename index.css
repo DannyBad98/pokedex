@@ -1,0 +1,162 @@
+@font-face{
+    font-family: Nintendo-DS-BIOS;
+    src: url(./fonts/Nintendo-DS-BIOS.ttf);
+}
+
+.header{
+    height: 70px;
+    width: 100vw;
+    background-color:#DB0A2D;
+    position: relative;
+    border-bottom: 2px solid black;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+body{
+    margin: 0;
+
+}
+
+.header1{
+    position: absolute;
+    z-index: 1;
+    height: 140px;
+    width: 50vw;
+    border-radius:0px 0px 50px 0px;
+    background-color: #DB0A2D;
+    border-bottom: 3px solid black;
+    border-left: 2px solid black;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+
+.bola{
+    padding-top: 1em;
+    padding-left: 2em;
+    height: 75%;
+}
+
+.punto{
+    align-self: flex-start;
+    padding-top: 1em;
+    padding-left: 1em;
+    height: 2em;
+}
+
+.main{
+    background-color: #DB0A2D;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+}
+
+.borde-pantalla{
+    margin-top: 7em;
+    height: 350px;
+    width: 500px;
+    background-color: #DEDEDE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px 15px 15px 25px;
+}
+
+.pantalla{
+    border: 2px solid black;
+    font-family: Nintendo-DS-BIOS;
+    font-size: 30px;
+    font-weight: bold;
+    height: 250px;
+    width: 450px;
+    background-color: black;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+.pkmn-name::first-letter{
+    text-transform: uppercase;
+}
+
+.punto-borde{
+    height: 20px;
+    align-self: auto;
+    
+}
+
+.puntos-container{
+    width: 100%;
+}
+
+.pad{
+    display: flex;
+    height: 35vh;
+    background-color: #DB0A2D;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.red-button{
+    height: 25px;
+    width: 50px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.black-button{
+    height: 25px;
+    width: 50px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.crucetacontainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.cruceta{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+.arriba{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.izquierda{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.derecha{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.abajo{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+input{
+    width: 200px;
+    height: 25px;
+    margin-right: 50px;
+}
+
+.pantalla.pokemon{
+    grid-template-columns: auto auto;
+}

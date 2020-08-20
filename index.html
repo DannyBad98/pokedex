@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokedex</title>
+        <link rel="stylesheet" type="text/css"  href="index.css">
+    </head>
+    <body>
+        <div class="header">
+            <input type="text" placeholder="Ingresa ID" id="search" disabled='true'>
+        </div>
+        <div class="header1">
+            <img src="./img/bola.png" alt="" class="bola">
+            <img src="./img/punto.png" alt="" class="punto"> 
+            <img src="./img/punto-amarillo.png" alt="" class="punto"> 
+            <img src="./img/punto-verde.png" alt="" class="punto">
+        </div>
+        <div class="main">
+            <div class="borde-pantalla">
+                <div class="pantalla" id="pantalla">
+                </div>
+            </div>
+        </div>
+        <div class="pad">
+            <div class="button " id="onOffButton" onclick="toggleScreen()"></div>
+            <div class="red-button"></div>
+            <div class="black-button"></div>
+            <div class="crucetacontainer">
+                <div class="cruceta arriba"></div>
+                <div class="cruceta izquierda"></div>
+                <div class="cruceta derecha"></div>
+                <div class="cruceta abajo"></div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
