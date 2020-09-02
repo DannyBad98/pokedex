@@ -6,7 +6,7 @@
 .header{
     height: 70px;
     width: 100vw;
-    background-color:#DB0A2D;
+    background-color:#8a1528;
     position: relative;
     border-bottom: 2px solid black;
     z-index: 0;
@@ -26,7 +26,7 @@ body{
     height: 140px;
     width: 50vw;
     border-radius:0px 0px 50px 0px;
-    background-color: #DB0A2D;
+    background-color: #8a1528;
     border-bottom: 3px solid black;
     border-left: 2px solid black;
     left: 0;
@@ -48,7 +48,7 @@ body{
 }
 
 .main{
-    background-color: #DB0A2D;
+    background-color: #8a1528;
     height: 65vh;
     display: flex;
     justify-content: center;
@@ -96,7 +96,7 @@ body{
 .pad{
     display: flex;
     height: 35vh;
-    background-color: #DB0A2D;
+    background-color: #8a1528;
     justify-content: space-around;
     align-items: center;
 }
@@ -159,4 +159,6 @@ input{
 
 .pantalla.pokemon{
     grid-template-columns: auto auto;
+    grid-template-rows: 50px auto;
+    overflow: visible;
 }

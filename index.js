@@ -9,6 +9,7 @@ function toggleScreen(){
         PANTALLA.style.backgroundColor = 'white'
         renderPokemons(BASEURL)
         search.disabled = false
+        addEventListenerScroll()
     }else{
         PANTALLA.style.backgroundColor = 'black'
         PANTALLA.innerHTML = ''
@@ -48,14 +49,24 @@ async function renderPokemons(url){
     });
     return data.next
 }
+function addEventListenerScroll(){
+    PANTALLA.addEventListener('scroll', () => {
+        const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
+        const scroller = PANTALLA.clientHeight
+        if(Math.ceil(scrollable) === scroller){
+            morePokemons()
+        }
+    })
+}
 
-PANTALLA.addEventListener('scroll', () => {
-    const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
-    const scroller = PANTALLA.clientHeight
-    if(Math.ceil(scrollable) === scroller){
-        morePokemons()
+function pantallaPokemons(){
+    while(PANTALLA.firstChild){
+        PANTALLA.removeChild(PANTALLA.firstChild)
     }
-})
+    addEventListenerScroll()
+    PANTALLA.classList.remove('pokemon')
+    renderPokemons(BASEURL)
+}
 
 async function morePokemons(){
     await renderPokemons(nextURL)
@@ -67,11 +78,11 @@ search.addEventListener('change', () => {
 
 async function renderPokemon(ID){
     PANTALLA.removeEventListener('scroll', null)
-    PANTALLA.style.overflow = 'visible'
     const data = await getPokemon(ID)
     while(PANTALLA.firstChild){
         PANTALLA.removeChild(PANTALLA.firstChild)
     }
+
     PANTALLA.classList.add('pokemon')
     const container = document.createElement('div')
     const pkmnContainer = document.createElement('div')
@@ -84,9 +95,29 @@ async function renderPokemon(ID){
     <img src='${data.sprites.front_default}' style="margin:auto;">
     `
     const infoContainer = document.createElement('div')
+    infoContainer.style.display = 'flex'
+    infoContainer.style.width = '225px'
+    infoContainer.style.margin = '0 auto'
     infoContainer.innerHTML = `
     <p class='pkmn-name' style=":auto;">${data.name}</p>`
-    
+
+    const pkmnHeader = document.createElement('div')
+    const btnRegresar = document.createElement('div')
+    btnRegresar.addEventListener('click', () => {
+        pantallaPokemons()
+        search.value = null
+    })
+    pkmnHeader.style.alignItems = 'center'
+    pkmnHeader.style.gridColumnStart = '1'
+    pkmnHeader.style.gridColumnEnd = '3'
+    pkmnHeader.style.backgroundColor = 'blue'
+    pkmnHeader.style.display = 'flex'
+    btnRegresar.innerHTML = `
+    <img src='./img/return.png' width='30px'>`
+    pkmnHeader.appendChild(btnRegresar)
+    PANTALLA.appendChild(pkmnHeader)
     container.appendChild(pkmnContainer)
     PANTALLA.appendChild(container)
+    PANTALLA.appendChild(infoContainer)
+
 }
