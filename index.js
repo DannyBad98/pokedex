@@ -7,11 +7,10 @@ const search = document.getElementById('search')
 function toggleScreen(){
     if(PANTALLA.style.backgroundColor === 'black'){
         PANTALLA.style.backgroundColor = '#CFD6C6'
+        pantallaPokemons()
         renderPokemons(BASEURL)
         search.disabled = false
-        addEventListenerScroll()
     }else{
-        limpiarPantalla()
         PANTALLA.style.backgroundColor = 'black'
         PANTALLA.innerHTML = ''
         search.disabled = true
@@ -32,7 +31,6 @@ async function getPokemon(ID){
 }
 
 async function renderPokemons(url){
-    pantallaPokemons()
     const data = await getPokemons(url)
     const pokemons = data.results
     nextURL = data.next
@@ -40,8 +38,8 @@ async function renderPokemons(url){
         var pkmnUrl = pokemon.url
         var number = pkmnUrl.slice(34, -1)
         const pkmnsContainer = document.createElement('div')
-        pkmnsContainer.style.width = '150px'
-        pkmnsContainer.style.height = '150px'
+        pkmnsContainer.style.width = '145px'
+        pkmnsContainer.style.height = '145px'
         pkmnsContainer.style.textAlign = 'center'
         pkmnsContainer.innerHTML = `
         <p class='pkmn-name' style="margin: 0px;">${pokemon.name}</p>
@@ -52,7 +50,7 @@ async function renderPokemons(url){
     return data.next
 }
 
-function addEventListenerScroll(){
+
     PANTALLA.addEventListener('scroll', () => {
         const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
         const scroller = PANTALLA.clientHeight
@@ -60,7 +58,6 @@ function addEventListenerScroll(){
             morePokemons()
         }
     })
-}
 
 function limpiarPantalla(){
     if (PANTALLA.firstChild){
@@ -71,11 +68,17 @@ function limpiarPantalla(){
 }
 
 function pantallaPokemons(){
-    addEventListenerScroll()
+    PANTALLA.classList.add('pokemons')
     PANTALLA.classList.remove('pokemon')
 }
 
+function pantallaPokemon(){
+    PANTALLA.classList.remove('pokemons')
+    PANTALLA.classList.add('pokemon')
+}
+
 function btnBack() {
+    limpiarPantalla()
     pantallaPokemons()
     renderPokemons(BASEURL)
     search.value = null
@@ -90,13 +93,9 @@ search.addEventListener('change', () => {
 })
 
 async function renderPokemon(ID){
-    PANTALLA.removeEventListener('scroll', null)
+    pantallaPokemon()
+    limpiarPantalla()
     const data = await getPokemon(ID)
-    while(PANTALLA.firstChild){
-        PANTALLA.removeChild(PANTALLA.firstChild)
-    }
-
-    PANTALLA.classList.add('pokemon')
     const container = document.createElement('div')
     container.className = 'pkmnContainer'
     container.innerHTML = `

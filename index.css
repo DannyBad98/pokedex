@@ -74,11 +74,15 @@ body{
     height: 250px;
     width: 450px;
     background-color: black;
-    overflow: scroll;
     display: grid;
+}
+
+.pokemons{
+    overflow: scroll;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
 }
+
 .pkmn-name::first-letter{
     text-transform: uppercase;
 }
@@ -157,7 +161,7 @@ input{
     margin-right: 50px;
 }
 
-.pantalla.pokemon{
+.pokemon{
     grid-template-columns: auto auto;
     grid-template-rows: 40px auto;
     overflow: visible;
@@ -165,6 +169,7 @@ input{
     color: white;
     text-shadow: 1px 2px 1px #000;
 }
+
 .pkmnContainer{
     display: block;
     width: 180px;
