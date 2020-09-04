@@ -11,6 +11,7 @@ function toggleScreen(){
         search.disabled = false
         addEventListenerScroll()
     }else{
+        limpiarPantalla()
         PANTALLA.style.backgroundColor = 'black'
         PANTALLA.innerHTML = ''
         search.disabled = true
@@ -70,7 +71,6 @@ function limpiarPantalla(){
 }
 
 function pantallaPokemons(){
-    limpiarPantalla()
     addEventListenerScroll()
     PANTALLA.classList.remove('pokemon')
 }
