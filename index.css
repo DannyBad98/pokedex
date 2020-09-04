@@ -159,6 +159,69 @@ input{
 
 .pantalla.pokemon{
     grid-template-columns: auto auto;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 40px auto;
     overflow: visible;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 2px 1px #000;
+}
+.pkmnContainer{
+    display: block;
+    width: 180px;
+    text-align: center;
+}
+
+.pkmnContainer  .pkmn-name{
+    background-color: #FFCF51; 
+    width: 160px;
+    height: 30px;  
+    color: white; 
+    text-shadow: 1px 2px 1 #000; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    margin: 5px auto;
+    display: block;
+    text-align: start;
+    border-radius: 5px;
+}
+
+.pkmnContainer  .itemContainer{
+    background-color: #FFCF51; 
+    width: 160px;
+    height: 30px;  
+    color: white;  
+    letter-spacing: 1px;
+    margin: auto;
+    display: block;
+}
+
+.pkmnContainer .whiteSeparator{
+    background-color: white;
+    width: 160px;
+    height: 27px;
+    margin: 0 auto;
+    color: black;
+    text-align: start;
+}
+
+.infoContainer {
+    background-color: #85DE8C;
+    width: 250px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.infoContainer p{
+    margin: 30px 10px 0px 10px;
+    width: 50px;
+    width: 120px;
+}
+
+.pkmnHeader{
+    align-items: center;
+    grid-column: 1/3;
+    background-color: #216BE6;
+    display: flex;
 }
