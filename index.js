@@ -1,8 +1,9 @@
 const ONBUTTON = document.querySelector('.button')
 const PANTALLA = document.getElementById('pantalla')
-var BASEURL =  `https://pokeapi.co/api/v2/pokemon/?limit=40`
+var BASEURL =  `https://pokeapi.co/api/v2/pokemon/?limit=30`
 var nextURL
 const search = document.getElementById('search')
+toggleScreen()
 
 function toggleScreen(){
     if(PANTALLA.style.backgroundColor === 'black'){
@@ -51,13 +52,13 @@ async function renderPokemons(url){
 }
 
 
-    PANTALLA.addEventListener('scroll', () => {
-        const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
-        const scroller = PANTALLA.clientHeight
-        if(Math.ceil(scrollable) === scroller){
-            morePokemons()
-        }
-    })
+PANTALLA.addEventListener('scroll', () => {
+    const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
+    const scroller = PANTALLA.clientHeight
+    if(Math.ceil(scrollable) === scroller){
+        morePokemons()
+    }
+})
 
 function limpiarPantalla(){
     if (PANTALLA.firstChild){
@@ -89,12 +90,12 @@ async function morePokemons(){
 }
 
 search.addEventListener('change', () => {
+    limpiarPantalla()
+    pantallaPokemon()
     renderPokemon(search.value)
 })
 
 async function renderPokemon(ID){
-    pantallaPokemon()
-    limpiarPantalla()
     const data = await getPokemon(ID)
     const container = document.createElement('div')
     container.className = 'pkmnContainer'

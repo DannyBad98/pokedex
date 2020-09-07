@@ -74,10 +74,10 @@ body{
     height: 250px;
     width: 450px;
     background-color: black;
-    display: grid;
 }
 
 .pokemons{
+    display: grid;
     overflow: scroll;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
@@ -174,6 +174,8 @@ input{
     display: block;
     width: 180px;
     text-align: center;
+    grid-column-start: 0;
+    grid-column-end: 1;
 }
 
 .pkmnContainer  .pkmn-name{
@@ -214,8 +216,10 @@ input{
     width: 250px;
     height: 200px;
     display: block;
-    margin: auto;
+    margin: 0;
     border-radius: 5px;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .infoContainer p{
