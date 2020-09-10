@@ -4,6 +4,7 @@
         <title>Pokedex</title>
         <link rel="stylesheet" type="text/css"  href="index.css">
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
     <body>
         <div class="header">
@@ -15,23 +16,23 @@
             <img src="./img/punto-amarillo.png" alt="" class="punto"> 
             <img src="./img/punto-verde.png" alt="" class="punto">
         </div>
-        <div class="main">
+        <div class="principal">
             <div class="borde-pantalla">
                 <div class="pantalla" id="pantalla">
                 </div>
             </div>
         </div>
         <div class="pad">
-            <div class="button " id="onOffButton" onclick="toggleScreen()"></div>
-            <div class="red-button"></div>
-            <div class="black-button"></div>
-            <div class="crucetacontainer">
-                <div class="cruceta arriba"></div>
-                <div class="cruceta izquierda"></div>
-                <div class="cruceta derecha"></div>
-                <div class="cruceta abajo"></div>
-            </div>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-off" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="toggleScreen()" id="btnEncender">
+                <path fill-rule="evenodd" d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
+            </svg>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-on" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="toggleScreen()" id="btnApagar">
+                <path fill-rule="evenodd" d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+            </svg>        
         </div>
         <script src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </body>
 </html>
