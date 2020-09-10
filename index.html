@@ -8,6 +8,7 @@
         <link rel="icon" type="image/png" href="https://img.icons8.com/offices/30/000000/pokeball.png">
     </head>
     <body>
+        <div>
         <div class="header">
             <input type="text" placeholder="Ingresa ID" id="search" disabled='true'>
         </div>
@@ -17,20 +18,21 @@
             <img src="./img/punto-amarillo.png" alt="" class="punto"> 
             <img src="./img/punto-verde.png" alt="" class="punto">
         </div>
-        <div class="principal">
+        <div class="principal justify-content-center align-items-center">
             <div class="borde-pantalla">
                 <div class="pantalla" id="pantalla">
                 </div>
             </div>
         </div>
         <div class="pad">
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-off" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="toggleScreen()" id="btnEncender">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-off" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="screenOn()" id="btnEncender">
                 <path fill-rule="evenodd" d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
             </svg>
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-on" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="toggleScreen()" id="btnApagar">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-toggle-on" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="screenOff()" id="btnApagar">
                 <path fill-rule="evenodd" d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-            </svg>        
+            </svg> 
         </div>
+    </div>
         <script src="index.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

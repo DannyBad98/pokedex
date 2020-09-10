@@ -3,8 +3,27 @@
     src: url(./fonts/Nintendo-DS-BIOS.ttf);
 }
 
+/* @media screen and (min-width: 1024px) {
+
+    .header{
+        height: 60px;
+        max-height: 60px;
+    }
+
+    .borde-pantalla{
+        height: 350px;
+        width: 500px;
+    }
+    .pantalla{
+        height: 250px;
+        width: 450px;
+    }
+} */
+
 .header{
-    height: 70px;
+    overflow: hidden;
+    height: 60px;
+    max-height: 60px;
     width: 100vw;
     background-color:#8a1528;
     position: relative;
@@ -23,7 +42,6 @@ body{
 .header1{
     position: absolute;
     z-index: 1;
-    height: 140px;
     width: 50vw;
     border-radius:0px 0px 50px 0px;
     background-color: #8a1528;
@@ -32,12 +50,13 @@ body{
     left: 0;
     top: 0;
     display: flex;
+    max-height: 120px;
 }
 
 .bola{
     padding-top: 1em;
     padding-left: 2em;
-    height: 75%;
+    max-height: 110px;
 }
 
 .punto{
@@ -49,14 +68,14 @@ body{
 
 .principal{
     background-color: #8a1528;
-    height: 65vh;
     display: flex;
     justify-content: center;
     width: 100vw;
+    height: 600px;
+    max-height: 600px;
 }
 
 .borde-pantalla{
-    margin-top: 7em;
     height: 350px;
     width: 500px;
     background-color: #DEDEDE;
@@ -100,11 +119,12 @@ body{
 
 .pad{
     display: flex;
-    height: 35vh;
     background-color: #8a1528;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
+    height: 60px;
+    max-height: 60px;
 }
 
 .button{
@@ -268,4 +288,21 @@ input{
 .infoContainer ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+@media screen and (max-width: 1023px) {
+    .principal{
+      height: 2000px;
+      max-height: 2000px;
+    }
+
+    .borde-pantalla{
+        height: 1500px;
+        width: 800px;
+    }
+
+    .pantalla{
+        height: 1351px;
+        width: 650px;
+    }
 }

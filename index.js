@@ -6,17 +6,16 @@ const search = document.getElementById('search')
 const OFFBUTTON = document.querySelector('#btnApagar')
 
 OFFBUTTON.style.display = 'none'
-toggleScreen()
 
-function toggleScreen(){
-    if(PANTALLA.style.backgroundColor === 'black'){
+function screenOn(){
         PANTALLA.style.backgroundColor = '#CFD6C6'
         pantallaPokemons()
         renderPokemons(BASEURL)
         ONBUTTON.style.display = 'none'
         OFFBUTTON.style.display = 'block'
         search.disabled = false
-    }else{
+}
+ function screenOff(){
         PANTALLA.style.backgroundColor = 'black'
         ONBUTTON.style.display = 'block'
         OFFBUTTON.style.display = 'none'
@@ -24,7 +23,6 @@ function toggleScreen(){
         PANTALLA.innerHTML = ''
         search.value = ''
         search.disabled = true
-    }
 }
 
 async function getPokemons(url){
@@ -61,9 +59,11 @@ async function renderPokemons(url){
 }
 
 PANTALLA.addEventListener('scroll', () => {
-const scrollable = PANTALLA.scrollHeight - PANTALLA.scrollTop
-const scroller = PANTALLA.clientHeight
-    if(Math.ceil(scrollable) === scroller){
+const scrollable = PANTALLA.scrollHeight - PANTALLA.clientHeight
+const scroller = PANTALLA.scrollTop
+const screll = scroller / scrollable
+    if(screll >= 0.98){
+        console.log(`scrollable ${scrollable} scroller ${scroller} ${screll}`)
         morePokemons()
     }
 })
